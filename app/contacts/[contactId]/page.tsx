@@ -26,7 +26,8 @@ type PageProps = {
 //       };
 // }
 
-export default async function ContactPage({ params }: PageProps) {
+export default async function ContactPage(props: PageProps) {
+  const params = await props.params;
   const { contactId } = routes.contactId.$parseParams(params);
   const contact = await getContactCache(contactId);
 

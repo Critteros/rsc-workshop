@@ -7,7 +7,8 @@ type PageProps = {
   params: unknown;
 };
 
-export default async function EditContactPage({ params }: PageProps) {
+export default async function EditContactPage(props: PageProps) {
+  const params = await props.params;
   const { contactId } = routes.contactIdEdit.$parseParams(params);
   const contact = getContactCache(contactId);
 

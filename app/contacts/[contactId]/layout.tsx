@@ -8,7 +8,13 @@ type Props = {
   params: unknown;
 };
 
-export default async function ContactsLayout({ children, params }: Props) {
+export default async function ContactsLayout(props: Props) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   const { contactId } = routes.contactId.$parseParams(params);
 
   return (
